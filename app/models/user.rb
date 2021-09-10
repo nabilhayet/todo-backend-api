@@ -1,6 +1,7 @@
 class User < ApplicationRecord
     has_secure_password 
     has_many :todos
+
     accepts_nested_attributes_for :todos
 
     validates :email, 
