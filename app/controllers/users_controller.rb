@@ -21,25 +21,17 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id 
       render json: @user, status: :created, location: @user
     else
-      resp = {
-        error: "Invalid credentials",
-        details: @user.errors.full_message 
-      }
-      render json: resp, status: :unauthorized 
+      render json: {status: "error", errors: @user.errors, code:3000, message: "This id does not exist" }
     end
   end
 
   def login 
-    @user = User.find_by(email: params[:user][:email])
-
-    if @user && @user.authenticate(params[:user][:password])
+    @user = User.find_by(email: params[:email])
+    if @user && @user.authenticate(params[:password])
+      session[:user_id] = @user.id 
       render json: @user
     else 
-      resp = {
-        error: "Invalid credentials",
-        details: @user.errors.full_message 
-      }
-      render json: resp, status: :unauthorized 
+      render json: {status: "error", code:3000, message: "This id does not exist" }
       
     end 
   end 
