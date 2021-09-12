@@ -4,11 +4,10 @@ class User < ApplicationRecord
 
     accepts_nested_attributes_for :todos
 
-    validates :email, 
-    format: { with: /^(.+)@(.+)$/, message: "Email invalid"  },
-            uniqueness: { case_sensitive: false },
-            length: { maximum: 50 },
-            presence: true
+    validates :email, { with: /^(.+)@(.+)$/ }
+
+    validates :email, presence: true 
+    validates :email, uniqueness: true
 
     validates :password, presence: true
     validates(:password, { :length => { :in => 4..16 } })

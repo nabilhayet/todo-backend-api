@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :update, :destroy]
+ # before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
@@ -10,6 +10,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
+    @user = User.find_by(id: params[:id])
     render json: @user
   end
 
@@ -17,23 +18,34 @@ class UsersController < ApplicationController
   def create
     @user = User.new(email: params[:email], password: params[:password])
     if @user.save
+      session[:user_id] = @user.id 
       render json: @user, status: :created, location: @user
     else
-      render json: @user.errors, status: :unprocessable_entity
+      resp = {
+        error: "Invalid credentials",
+        details: @user.errors.full_message 
+      }
+      render json: resp, status: :unauthorized 
     end
   end
 
+  def login 
+    @user = User.find_by(email: params[:user][:email])
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
+    if @user && @user.authenticate(params[:user][:password])
+      render json: @user
+    else 
+      resp = {
+        error: "Invalid credentials",
+        details: @user.errors.full_message 
+      }
+      render json: resp, status: :unauthorized 
+      
+    end 
+  end 
 
-    # Only allow a trusted parameter "white list" through.
+  def destroy
+    session.clear
+  end 
 
-    # def user_params
-  
-    #   params.require(:user).permit(:email, :password_digest)
-    # end
 end
