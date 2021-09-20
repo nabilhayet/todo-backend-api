@@ -3,8 +3,8 @@
                                                       
 This project lets a user add a new todo. Before creating a todo a user needs to logged in and only registered users can sign in. After creating a todo, a user can see all the existing todos. Updating or deleting a todo option available to the user. At the end, all todos are cleared when the user logs out of the profile.
 
-<a href="https://www.youtube.com/watch?v=54azoDzOMTc&t=1s">Demo</a>
-<a href="https://github.com/nabilhayet/bookstore-frontend">Frontend</a>
+<a href="https://www.youtube.com/watch?v=fk75oqqnAgo">Demo</a>
+<a href="https://github.com/nabilhayet/todo-frontend">Frontend</a>
 
 Table of Contents
 - [Features](#features)
@@ -27,22 +27,22 @@ Table of Contents
 </ul>
 
 ## Login
-![book_details](https://user-images.githubusercontent.com/33500404/109563444-c7814200-7aad-11eb-860c-8fa1014a04a6.gif)
+![Login](https://user-images.githubusercontent.com/33500404/133952223-82f82b5f-953e-4a8b-936a-7017183e1354.gif)
 
 ## Add Todo
-![add_book](https://user-images.githubusercontent.com/33500404/109563397-b59f9f00-7aad-11eb-8f58-f4ced6935236.gif)
+![Add_todo](https://user-images.githubusercontent.com/33500404/133952241-d239545c-96b0-4ef5-b628-29d0d9252881.gif)
 
-## View Todos
-![view_authors](https://user-images.githubusercontent.com/33500404/109563556-ef70a580-7aad-11eb-882d-428043361340.gif)
+## Edit Todo
+![Update_todo](https://user-images.githubusercontent.com/33500404/133952257-bcd8f215-b06d-48d7-a7c8-639c37e48678.gif)
 
-## Edit/Delete Todo
-![add_like](https://user-images.githubusercontent.com/33500404/109563422-bf290700-7aad-11eb-80a0-8ea67533311c.gif)
+## Delete Todo
+![Delete_todo](https://user-images.githubusercontent.com/33500404/133952276-b9fc6da3-195a-433b-a9d5-82f350992ee0.gif)
 
 ## Search Todo
-![search_book](https://user-images.githubusercontent.com/33500404/109563467-cf40e680-7aad-11eb-8556-2d7e84ef88ad.gif)
+![Search_todo](https://user-images.githubusercontent.com/33500404/133952288-0e1ed262-1fa0-425d-a659-dd233f8878a4.gif)
 
 ## Logout
-![view_books](https://user-images.githubusercontent.com/33500404/109563586-f992a400-7aad-11eb-83fb-463fe7a46e02.gif)
+![Logout](https://user-images.githubusercontent.com/33500404/133952297-fa99f443-f70e-4a87-8dce-db3581961b54.gif)
 
 ## Tech-Stack
 <p>This web app makes use of the following:</p>
